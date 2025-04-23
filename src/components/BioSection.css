@@ -1,0 +1,82 @@
+.bio-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .avatar-wrapper {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .avatar-ring {
+    background: linear-gradient(135deg, #6366f1, #9333ea);
+    padding: 4px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .avatar-ring:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 12px rgba(147, 51, 234, 0.6);
+  }
+  
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .tooltip {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+
+  .avatar-wrapper:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .bio-text {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .bio {
+    background-color: #242424;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    max-width: 700px;
+    margin: 2rem auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #f3f3f3;
+  }
+  
+  .bio strong {
+    color: #a78bfa;
+  }
+  
+  
