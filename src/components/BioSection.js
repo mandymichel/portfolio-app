@@ -12,7 +12,7 @@ export default function BioSection() {
         >
           <div className="avatar-ring">
             <img
-              src="/images/mandy.jpg"
+              src="./images/mandy.jpg"
               alt="Mandy Michel"
               className="avatar"
             />
