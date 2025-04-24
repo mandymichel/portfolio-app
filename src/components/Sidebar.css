@@ -2,14 +2,22 @@
 
 .sidebar {
     width: 200px;
-    min-height: 100vh;
-    background-color: #6366f1; /* Purple */
-    padding: 1rem;
+    background-color: #6366f1;
+    height: 100vh;
     position: fixed;
-    left: 0;
     top: 0;
-    transition: transform 0.3s ease;
+    left: 0;
     z-index: 1000;
+    transition: transform 0.3s ease;
+    padding: 1.5rem 1rem; /* Add padding inside the sidebar */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between links */
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
   }
   
   .sidebar nav {
@@ -50,12 +58,12 @@
   /* Responsive */
   @media (max-width: 768px) {
     .sidebar {
-      transform: translateX(-100%);
-    }
-  
-    .sidebar.open {
-      transform: translateX(0);
-    }
+        transform: translateX(-100%);
+      }
+    
+      .sidebar.open {
+        transform: translateX(0);
+      }
   
     .hamburger {
       display: block;
