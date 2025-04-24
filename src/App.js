@@ -32,13 +32,13 @@ function App() {
       title: "Sentiment Analysis App",
       description: "Analyzes user sentiment from input text.",
       link: "https://mandymichel.github.io/sentiment-analysis/",
-      image: "./screenshots/sentiment.png",
+      image: `${process.env.PUBLIC_URL}/screenshots/sentiment.png`,
     },
     {
       title: "Countdown App",
       description: "Counts down to a target date or event.",
       link: "https://mandymichel.github.io/countdown-app/",
-      image: "./screenshots/countdown.png",
+      image: `${process.env.PUBLIC_URL}/screenshots/countdown.png`,
     },
   ]
 

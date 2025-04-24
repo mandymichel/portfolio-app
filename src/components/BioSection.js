@@ -12,7 +12,7 @@ export default function BioSection() {
         >
           <div className="avatar-ring">
             <img
-              src="/images/mandy.jpg"
+              src={`${process.env.PUBLIC_URL}/images/mandy.jpg`}
               alt="Mandy Michel"
               className="avatar"
             />
@@ -32,7 +32,11 @@ export default function BioSection() {
         </div>
       </div>
       <div style={{ textAlign: "center", marginTop: "2rem" }}>
-        <a href="./resume.pdf" download className="resume-button">
+        <a
+          href={`${process.env.PUBLIC_URL}/resume.pdf`}
+          download
+          className="resume-button"
+        >
           Download My Resume
         </a>
       </div>
