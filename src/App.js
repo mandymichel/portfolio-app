@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from "react"
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom"
 import Header from "./components/Header"
 import BioSection from "./components/BioSection"
+import BlogPage from "./components/BlogPage"
 import Footer from "./components/Footer"
+import Sidebar from "./components/Sidebar"
+import ProjectsPage from "./components/ProjectsPage"
 import "./App.css"
 
 function App() {
@@ -14,6 +23,9 @@ function App() {
     window.addEventListener("keydown", handleEsc)
     return () => window.removeEventListener("keydown", handleEsc)
   }, [])
+
+  const openLightbox = (imgSrc) => setLightboxImg(imgSrc)
+  const closeLightbox = () => setLightboxImg(null)
 
   const projects = [
     {
@@ -30,46 +42,35 @@ function App() {
     },
   ]
 
-  const openLightbox = (imgSrc) => {
-    setLightboxImg(imgSrc)
-  }
-
-  const closeLightbox = () => {
-    setLightboxImg(null)
-  }
-
   return (
-    <div className="App">
-      <Header />
-      <BioSection />
-      <h2 style={{ textAlign: "center", marginBottom: "2rem" }}>Projects</h2>
-      <div className="project-grid">
-        {projects.map((project) => (
-          <div className="project-card" key={project.title}>
-            <img
-              src={project.image}
-              alt={project.title}
-              onClick={() => openLightbox(project.image)}
-              className="clickable"
+    <Router>
+      <div className="App" style={{ display: "flex" }}>
+        <Sidebar />
+        <div style={{ marginLeft: "200px", padding: "20px", flexGrow: 1 }}>
+          <Header />
+          <Routes>
+            <Route path="/portfolio-app" element={<Navigate to="/bio" />} />
+            <Route path="/bio" element={<BioSection />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route
+              path="/projects"
+              element={
+                <ProjectsPage projects={projects} openLightbox={openLightbox} />
+              }
             />
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              View Project
-            </a>
-          </div>
-        ))}
-      </div>
-
-      {/* Lightbox Modal */}
-      {lightboxImg && (
-        <div className="lightbox" onClick={closeLightbox}>
-          <img src={lightboxImg} alt="Full size project" />
+          </Routes>
+          {lightboxImg && (
+            <div className="lightbox" onClick={closeLightbox}>
+              <img src={lightboxImg} alt="Full size project" />
+            </div>
+          )}
+          <Footer />
         </div>
-      )}
-      <Footer />
-    </div>
+      </div>
+    </Router>
   )
 }
 
 export default App
+
+
