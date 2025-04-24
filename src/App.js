@@ -27,18 +27,20 @@ function App() {
   const openLightbox = (imgSrc) => setLightboxImg(imgSrc)
   const closeLightbox = () => setLightboxImg(null)
 
+  const basePath = "/portfolio-app"
+
   const projects = [
     {
       title: "Sentiment Analysis App",
       description: "Analyzes user sentiment from input text.",
       link: "https://mandymichel.github.io/sentiment-analysis/",
-      image: `${process.env.PUBLIC_URL}/screenshots/sentiment.png`,
+      image: `${basePath}/screenshots/sentiment.png`,
     },
     {
       title: "Countdown App",
       description: "Counts down to a target date or event.",
       link: "https://mandymichel.github.io/countdown-app/",
-      image: `${process.env.PUBLIC_URL}/screenshots/countdown.png`,
+      image: `${basePath}/screenshots/countdown.png`,
     },
   ]
 

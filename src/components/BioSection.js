@@ -1,6 +1,8 @@
 import "./BioSection.css"
 
 export default function BioSection() {
+  const basePath = "/portfolio-app"
+
   return (
     <section className="bio">
       <div className="bio-container">
@@ -12,7 +14,7 @@ export default function BioSection() {
         >
           <div className="avatar-ring">
             <img
-              src={`${process.env.PUBLIC_URL}/images/mandy.jpg`}
+              src={`${basePath}/images/mandy.jpg`}
               alt="Mandy Michel"
               className="avatar"
             />
@@ -32,11 +34,7 @@ export default function BioSection() {
         </div>
       </div>
       <div style={{ textAlign: "center", marginTop: "2rem" }}>
-        <a
-          href={`${process.env.PUBLIC_URL}/resume.pdf`}
-          download
-          className="resume-button"
-        >
+        <a href={`${basePath}/resume.pdf`} download className="resume-button">
           Download My Resume
         </a>
       </div>
