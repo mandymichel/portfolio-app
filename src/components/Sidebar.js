@@ -1,24 +1,43 @@
-import React from "react"
-import { Link } from "react-router-dom"
+// src/components/Sidebar.js
+import React, { useState } from "react"
+import { NavLink } from "react-router-dom"
 import "./Sidebar.css"
 
-export default function Sidebar() {
+function Sidebar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleSidebar = () => setIsOpen(!isOpen)
+
   return (
-    <div className="sidebar">
-      <h1 className="logo">My Portfolio</h1>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/bio">Bio</Link>
-          </li>
-          <li>
-            <Link to="/blog">Blog</Link>
-          </li>
-          <li>
-            <Link to="/projects">Projects</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <>
+      <div className="hamburger" onClick={toggleSidebar}>
+        ☰
+      </div>
+
+      <div className={`sidebar ${isOpen ? "open" : ""}`}>
+        <nav>
+          <NavLink
+            to="/bio"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Bio
+          </NavLink>
+          <NavLink
+            to="/blog"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Blog
+          </NavLink>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Projects
+          </NavLink>
+        </nav>
+      </div>
+    </>
   )
 }
+
+export default Sidebar
