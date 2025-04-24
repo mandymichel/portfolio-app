@@ -78,5 +78,15 @@
   .bio strong {
     color: #a78bfa;
   }
+
+  .resume-button {
+    padding: 10px 20px;
+    background-color: #db2777;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
   
   

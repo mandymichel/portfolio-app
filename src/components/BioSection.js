@@ -31,6 +31,11 @@ export default function BioSection() {
           </p>
         </div>
       </div>
+      <div style={{ textAlign: "center", marginTop: "2rem" }}>
+        <a href="./resume.pdf" download className="resume-button">
+          Download My Resume
+        </a>
+      </div>
     </section>
   )
 }
