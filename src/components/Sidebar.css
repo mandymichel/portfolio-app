@@ -1,8 +1,9 @@
 /* Sidebar.css */
+
 .sidebar {
     width: 200px;
     min-height: 100vh;
-    background-color: #6366f1; /* Purple background */
+    background-color: #6366f1; /* Purple */
     padding: 1rem;
     position: fixed;
     left: 0;
@@ -14,18 +15,19 @@
   .sidebar nav {
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
   }
   
   .sidebar nav a {
     text-decoration: none;
     padding: 0.75rem 0;
-    color: #e5e7eb; /* Light gray (tailwind's gray-200) */
+    color: #e5e7eb; /* Light gray text */
     font-weight: 500;
     transition: color 0.3s ease;
   }
   
   .sidebar nav a:hover {
-    color: #ffffff; /* Full white on hover */
+    color: #ffffff;
   }
   
   .sidebar nav a.active {
@@ -33,18 +35,19 @@
     font-weight: bold;
   }
   
+  /* Hamburger */
   .hamburger {
     display: none;
     position: fixed;
     top: 1rem;
     left: 1rem;
-    font-size: 1.5rem;
-    z-index: 1100;
+    font-size: 1.75rem;
+    z-index: 1101;
     color: white;
     cursor: pointer;
   }
   
-  /* Responsive Styles */
+  /* Responsive */
   @media (max-width: 768px) {
     .sidebar {
       transform: translateX(-100%);
@@ -56,6 +59,10 @@
   
     .hamburger {
       display: block;
+    }
+  
+    .sidebar.open ~ .hamburger {
+      display: none;
     }
   }
   
