@@ -47,48 +47,50 @@ const AppContent = () => {
   ]
 
   return (
-    <div className="App" style={{ display: "flex" }}>
-      <Sidebar />
-      <div style={{ marginLeft: "200px", padding: "20px", flexGrow: 1 }}>
-        <Header />
-        <AnimatePresence mode="wait">
-          <Routes location={routerLocation} key={routerLocation.pathname}>
-            <Route path="/" element={<Navigate to="/bio" />} />
-            <Route
-              path="/bio"
-              element={
-                <AnimatedPage>
-                  <BioSection />
-                </AnimatedPage>
-              }
-            />
-            <Route
-              path="/blog"
-              element={
-                <AnimatedPage>
-                  <BlogPage />
-                </AnimatedPage>
-              }
-            />
-            <Route
-              path="/projects"
-              element={
-                <AnimatedPage>
-                  <ProjectsPage
-                    projects={projects}
-                    openLightbox={openLightbox}
-                  />
-                </AnimatedPage>
-              }
-            />
-          </Routes>
-        </AnimatePresence>
-        {lightboxImg && (
-          <div className="lightbox" onClick={closeLightbox}>
-            <img src={lightboxImg} alt="Full size project" />
-          </div>
-        )}
-        <Footer />
+    <div className="main-content">
+      <div className="App" style={{ display: "flex" }}>
+        <Sidebar />
+        <div style={{ marginLeft: "200px", padding: "20px", flexGrow: 1 }}>
+          <Header />
+          <AnimatePresence mode="wait">
+            <Routes location={routerLocation} key={routerLocation.pathname}>
+              <Route path="/" element={<Navigate to="/bio" />} />
+              <Route
+                path="/bio"
+                element={
+                  <AnimatedPage>
+                    <BioSection />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path="/blog"
+                element={
+                  <AnimatedPage>
+                    <BlogPage />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path="/projects"
+                element={
+                  <AnimatedPage>
+                    <ProjectsPage
+                      projects={projects}
+                      openLightbox={openLightbox}
+                    />
+                  </AnimatedPage>
+                }
+              />
+            </Routes>
+          </AnimatePresence>
+          {lightboxImg && (
+            <div className="lightbox" onClick={closeLightbox}>
+              <img src={lightboxImg} alt="Full size project" />
+            </div>
+          )}
+          <Footer />
+        </div>
       </div>
     </div>
   )
