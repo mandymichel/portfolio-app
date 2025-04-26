@@ -35,6 +35,10 @@ const BlogPage = () => {
 
   return (
     <div className="blog-page">
+      <p>
+        (Just testing out the fetch and rendering of markdown files from an s3
+        bucket)
+      </p>
       {posts.map((post, i) => (
         <div key={i} className="blog-post" style={{ marginBottom: "2rem" }}>
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
