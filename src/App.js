@@ -53,7 +53,7 @@ const AppContent = () => {
         <Header />
         <AnimatePresence mode="wait">
           <Routes location={routerLocation} key={routerLocation.pathname}>
-            <Route path="/" element={<Navigate to="/bio" />} />
+            <Route path="/portfolio-app" element={<Navigate to="/bio" />} />
             <Route
               path="/bio"
               element={
